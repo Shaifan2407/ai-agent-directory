@@ -149,8 +149,3 @@ Server routes live under `src/app/api/`. CORS is enabled for `/api/*` in `next.c
 - Decide whether the public submit form should call **`/api/submit-tool`** (demo) or **`/api/tools/submit`** (database + optional Cloudinary), and update the form `fetch` in `src/app/submit/page.jsx` accordingly.
 - Add `public/favicon.ico.png` and any marketing assets the layout references, if not already present.
 
----
-
-## License
-
-This project is marked **private** in `package.json`. Add a license file if you intend to open-source it.
