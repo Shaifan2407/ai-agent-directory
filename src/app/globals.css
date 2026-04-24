@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font families */
+@layer base {
+  @font-face {
+    font-family: "SuisseIntl-Bold";
+    src: url("https://db.onlinewebfonts.com/a/Aw0g00aa7qbFk0nqosz2w1ENV81cB3N3Y0JrZ0b2");
+  }
+  @font-face {
+    font-family: "SuisseIntl-Light";
+    src: url("https://db.onlinewebfonts.com/a/Aw0g00aa7qbFk0nqosz2w1ENV81cB3N3Y0JrZ0b2");
+  }
+  @font-face {
+    font-family: "SuisseIntl-Medium";
+    src: url("https://db.onlinewebfonts.com/a/Aw0g00aa7qbFk0nqosz2w1ENV81cB3N3Y0JrZ0b2");
+  }
+  @font-face {
+    font-family: "SuisseIntl-Regular";
+    src: url("https://db.onlinewebfonts.com/a/Aw0g00aa7qbFk0nqosz2w1ENV81cB3N3Y0JrZ0b2");
+  }
+  @font-face {
+    font-family: "SuisseIntl-SemiBold";
+    src: url("https://db.onlinewebfonts.com/a/Aw0g00aa7qbFk0nqosz2w1ENV81cB3N3Y0JrZ0b2");
+  }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 72.2% 50.6%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 72.2% 50.6%;
+  }
+}
+
+:root {
+  --card-bg: #141414;
+  --gradient-start: #ff2ef1;
+  --gradient-end: #2effd5;
+}
+
+.hero-background {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  min-height: 600px;
+}
+.hero2-background {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  min-height: 250px;
+}
+.hero3-background {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  min-height: 80px;
+}
+.hero4-background {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  min-height: 150px;
+}
+.grid-perspective {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.perspective-grid {
+  position: absolute;
+  inset: 0;
+  bottom: -40%;
+  transform: rotateX(60deg) translateY(0) scale(2.5);
+  transform-origin: center bottom;
+}
+
+.horizontal-lines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(255, 255, 255, 0.1) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 99px,
+      rgba(255, 255, 255, 0.1) 100px
+    );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.gradient-source-left,
+.gradient-source-right {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.5;
+}
+
+.gradient-source-left {
+  left: -150px;
+  top: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 46, 241, 0.8) 0%,
+    rgba(255, 46, 241, 0) 70%
+  );
+}
+
+.gradient-source-right {
+  right: -150px;
+  top: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(46, 255, 213, 0.8) 0%,
+    rgba(46, 255, 213, 0) 70%
+  );
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0; /* Covers the entire parent container */
+  background: radial-gradient(
+        ellipse,
+        rgba(255, 46, 241, 0.1) 0%,
+        /* Brighter pink center, more subtle */ rgba(255, 46, 241, 0.05) 30%,
+        /* Fades out slower to a lighter pink */ rgba(255, 46, 241, 0.025) 60%,
+        /* Even more gradual fade */ rgba(0, 0, 0, 0) 80%
+          /* Fully transparent, but more spread out */
+      )
+      0% 40% / 50% 100%,
+    /* Pink gradient aligned to the left */
+      radial-gradient(
+        ellipse,
+        rgba(46, 255, 213, 0.1) 0%,
+        /* Brighter cyan center, more subtle */ rgba(46, 255, 213, 0.05) 30%,
+        /* Fades out slower to a lighter cyan */ rgba(46, 255, 213, 0.025) 60%,
+        /* Even more gradual fade */ rgba(0, 0, 0, 0) 80%
+          /* Fully transparent, but more spread out */
+      )
+      100% 40% / 50% 100%; /* Green gradient aligned to the right */
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.diagonal-lines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(255, 255, 255, 0.1) 40px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(255, 255, 255, 0.1) 40px
+    );
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.badge-premium {
+  background: linear-gradient(90deg, #ffb800, #ff8a00);
+}
+
+.badge-paid {
+  background: linear-gradient(90deg, #ff4646, #ff0000);
+}
+
+.badge-free {
+  background: linear-gradient(90deg, #00ff94, #00b268);
+}
+
+.social-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Add these new styles */
+.prose {
+  color: rgb(255 255 255 / 0.8);
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: white;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* Add hover effects */
+.group:hover .group-hover\:text-\[\#2EFFD5\] {
+  color: #2effd5;
+}
+
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9375rem;
+  }
+}
+
+/* New styles for the product details page */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-h-9 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+/* Add these new styles at the end of the file */
+
+.bg-gradient {
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #1a1a1a,
+    #2b2b2b,
+    #1a1a1a,
+    #000000
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#scroll-container {
+  will-change: transform;
+}
+
+.tool-card {
+  transition: transform 0.3s ease-out;
+}
